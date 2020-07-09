@@ -3,8 +3,15 @@
   top: 0;
 }
 
-.page-content {
+.subtitle {
   animation: fadeIn 0.75s ease-in-out;
+}
+
+.project-grid {
+  opacity: 0;
+  animation: fadeIn 0.75s ease-in-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
@@ -79,7 +86,7 @@
     padding: 0px 32px;
     display: grid;
     grid-template-columns: 45% 45%;
-    column-gap: 10%;
+    grid-column-gap: 10%;
   }
   .project {
     margin-bottom: 80px;

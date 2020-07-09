@@ -1,4 +1,19 @@
 var interactions = document.querySelectorAll(".memory-interaction img");
+var jpgs = ["../media/process/FCA_memories1.jpg", "../media/process/FCA_memories2.jpg", "../media/process/FCA_memories3.jpg", "../media/process/FCA_memories4.jpg", "../media/process/FCA_memories5.jpg"];
+var gifs = ["../media/process/FCA_memories1.gif", "../media/process/FCA_memories2.gif", "../media/process/FCA_memories3.gif", "../media/process/FCA_memories4.gif", "../media/process/FCA_memories5.gif"];
+
+// function playGif(interaction, jpg, gif) {
+// 	interaction.addEventListener("mouseover", function() {
+// 		interaction.setAttribute("src", gif);
+// 		interaction.addEventListener("mouseout", function() {
+// 			interaction.setAttribute("src", jpg);
+// 		})
+// 	});
+// }
+
+// for (var i = 0; i < interactions.length; i++) {
+// 	playGif(interactions[i], jpgs[i], gifs[i]);
+// }
 
 function getPosition(element) {
     var yPosition = 0;
@@ -12,28 +27,30 @@ function getPosition(element) {
 }
 
 // GIF PLAY ON SCROLL
-function gifOnScroll(feature, jpg, gif) {
-	var topOfFeature = getPosition(feature);
+window.addEventListener("load", function() {
+	function gifOnScroll(feature, jpg, gif) {
+		var topOfFeature = getPosition(feature);
 
-	window.addEventListener("scroll", function() {
-		if (window.scrollY >= (topOfFeature - window.innerHeight * 2 / 3)) {
-			if(feature.getAttribute("src") === jpg) {
-				feature.setAttribute("src", gif);
-			}
-		} else {
-			feature.setAttribute("src", jpg);
-		}
-
-		if (window.scrollY >= topOfFeature - window.innerHeight / 10) {
-			if(feature.getAttribute("src") === gif) {
+		window.addEventListener("scroll", function() {
+			if (window.scrollY >= (topOfFeature - window.innerHeight * 2 / 3)) {
+				if(feature.getAttribute("src") === jpg) {
+					feature.setAttribute("src", gif);
+				}
+			} else {
 				feature.setAttribute("src", jpg);
 			}
-		}
-	})
-}
 
-gifOnScroll(interactions[0], "../media/process/FCA_memories1.jpg", "../media/process/FCA_memories1.gif");
-gifOnScroll(interactions[1], "../media/process/FCA_memories2.jpg", "../media/process/FCA_memories2.gif");
-gifOnScroll(interactions[2], "../media/process/FCA_memories3.jpg", "../media/process/FCA_memories3.gif");
-gifOnScroll(interactions[3], "../media/process/FCA_memories4.jpg", "../media/process/FCA_memories4.gif");
-gifOnScroll(interactions[4], "../media/process/FCA_memories5.jpg", "../media/process/FCA_memories5.gif");
+			if (window.scrollY >= topOfFeature) {
+				if(feature.getAttribute("src") === gif) {
+					feature.setAttribute("src", jpg);
+				}
+			}
+		})
+	}
+
+	gifOnScroll(interactions[0], "../media/process/FCA_memories1.jpg", "../media/process/FCA_memories1.gif");
+	gifOnScroll(interactions[1], "../media/process/FCA_memories2.jpg", "../media/process/FCA_memories2.gif");
+	gifOnScroll(interactions[2], "../media/process/FCA_memories3.jpg", "../media/process/FCA_memories3.gif");
+	gifOnScroll(interactions[3], "../media/process/FCA_memories4.jpg", "../media/process/FCA_memories4.gif");
+	gifOnScroll(interactions[4], "../media/process/FCA_memories5.jpg", "../media/process/FCA_memories5.gif");
+})

@@ -6,33 +6,33 @@ var topOfNav = mainSection.offsetTop;
 
 const landingContent = document.querySelector(".landing-top");
 const landingContent2 = document.querySelector(".arrow");
-const [textRed, textGreen, textBlue] = [255, 255, 255];
-
-
+// const [textRed, textGreen, textBlue] = [255, 255, 255];
 const landingSection = document.querySelector(".landing");
-const [backgroundRed, backgroundGreen, backgroundBlue] = [0, 7, 28];
+// const [backgroundRed, backgroundGreen, backgroundBlue] = [0, 7, 28];
 
-var right = "fca";
-var main = "impressions";
-var left = "third space";
-const previewContainer = document.querySelector(".main-preview");
-const mainImageContainer = document.querySelector(".main-preview-image");
-const rightPreview = document.querySelector("#sub-preview-2");
-const rightTitle = document.querySelector("#sub-preview-2 h1");
-const rightSubtitle = document.querySelector("#sub-preview-2 h2");
-const leftPreview = document.querySelector("#sub-preview-1");
-const leftTitle = document.querySelector("#sub-preview-1 h1");
-const leftSubtitle = document.querySelector("#sub-preview-1 h2");
-const mainTitle = document.querySelector(".main-preview-info h1");
-const mainSubtitle = document.querySelector(".main-preview-info h2");
-const mainImage = document.querySelector(".main-preview-image img");
-const mainContainer = document.querySelector(".main-preview");
-var timer;
+var faders = document.querySelectorAll(".will-fade");
+
+var triggerItem = document.querySelector("#impressions-project-preview");
+var impressionsLeft = document.querySelector("#impressions-project-preview .left-project-preview");
+var impressionsRight = document.querySelector("#impressions-project-preview .right-project-preview");
+var button = document.querySelector("#preview-button");
+var fcaRight = document.querySelector("#fca-project-preview .right-project-preview");
+var fcaLeft = document.querySelector("#fca-project-preview .left-project-preview");
+var thirdspaceRight = document.querySelector("#thirdspace-project-preview .right-project-preview");
+var thirdspaceLeft = document.querySelector("#thirdspace-project-preview .left-project-preview");
+var impressionsPreview = document.querySelector("#impressions-project-preview");
+var fcaPreview = document.querySelector("#fca-project-preview");
+var thirdspacePreview = document.querySelector("#thirdspace-project-preview");
+var previewItem = "impressions";
 
 //  LOAD AT TOP OF PAGE
 window.onunload = function() {
   window.scrollTo(0, 0);
 };
+
+window.addEventListener("resize", function() {
+  topOfNav = mainSection.offsetTop;
+})
 
 // STICKY NAV
 window.addEventListener("scroll", function() {
@@ -86,7 +86,7 @@ fade(".landing-intro h2:last-of-type");
 
 // LANDING TEXT POSITION
 window.addEventListener("scroll", function() {
-  if (window.scrollY >= topOfNav * (3 / 5)) {
+  if (window.scrollY >= topOfNav - window.innerHeight) {
     landingContent.style.position = "absolute";
     landingContent.style.bottom = "0";
     landingContent.style.top = "auto";
@@ -99,188 +99,102 @@ window.addEventListener("scroll", function() {
 });
 
 //LANDING TEXT COLOR
-window.addEventListener("scroll", function() {
-  const x = 1 + (window.scrollY || window.pageYOffset) / 150;
-  const [r2, g2, b2] = [textRed / x, textGreen / x, textBlue / x].map(
-    Math.round
-  );
-  landingContent.style.color = `rgb(${r2}, ${g2}, ${b2})`;
-  landingContent2.style.color = `rgb(${r2}, ${g2}, ${b2})`;
-});
+// window.addEventListener("scroll", function() {
+//   const x = 1 + (window.scrollY || window.pageYOffset) / 150;
+//   const [r2, g2, b2] = [textRed / x, textGreen / x, textBlue / x].map(
+//     Math.round
+//   );
+//   landingContent.style.color = `rgb(${r2}, ${g2}, ${b2})`;
+//   landingContent2.style.color = `rgb(${r2}, ${g2}, ${b2})`;
+// });
 
 // LANDING BACKGROUND COLOR
 window.addEventListener("scroll", function() {
-  const y = 1 + (window.scrollY || window.pageYOffset) / 5;
-  const [r, g, b] = [
-    backgroundRed + y,
-    backgroundGreen + y,
-    backgroundBlue + y
-  ].map(Math.round);
-  landingSection.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
+  if (window.scrollY >= landingSection.offsetHeight * (2/5)) {
+    landingSection.classList.add("change-color");
+  } else if (window.scrollY < landingSection.offsetHeight) {
+    landingSection.classList.remove("change-color");
+  }
+})
 
-//  SUBTITLE FADE IN
-function fadeOnScroll(fadeItem) {
-  const item = document.querySelector(fadeItem);
-
-  item.style.opacity = "0";
-  item.style.webkitTransform = "translateY(20px)";
-  item.style.transition = "all 0.75s ease-in-out";
-
-  var signalHeight = item.offsetTop - window.innerHeight * (2 / 3);
-
-  window.addEventListener("scroll", function() {
-    if (window.scrollY >= signalHeight) {
-      item.style.webkitTransform = "translateY(0px)";
-      item.style.opacity = "1";
-    }
-  });
-}
-fadeOnScroll("#landing-bold-subtitle");
-fadeOnScroll("#landing-small-subtitle");
+// window.addEventListener("scroll", function() {
+//   const y = 1 + (window.scrollY || window.pageYOffset) / 5;
+//   const [r, g, b] = [
+//     backgroundRed + y,
+//     backgroundGreen + y,
+//     backgroundBlue + y
+//   ].map(Math.round);
+//   landingSection.style.background = `rgb(${r}, ${g}, ${b})`;
+// });
 
 // DESKTOP PROJECT PREVIEW
-function animatePreview() {
-  mainImageContainer.style.transformOrigin = "top";
-  mainImageContainer.style.webkitTransform = "scaleY(0)";
-  mainImageContainer.style.transition =
-    "all 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0s";
-
-  var signalHeight2 = previewContainer.offsetTop - window.innerHeight * (2 / 3);
-
-  window.addEventListener("scroll", function() {
-    if (window.scrollY >= signalHeight2) {
-      mainImageContainer.style.webkitTransform = "scaleY(1)";
-    }
-  });
-}
-
-animatePreview();
-
-function fcaMain() {
-  mainTitle.innerText = "Fiat Chrysler AI Concept";
-  mainSubtitle.innerText = "UX Internship, Research, AI";
-  mainImage.setAttribute("src", "media/fca.jpg");
-  mainContainer.style.backgroundColor = "rgba(185, 222, 177, 0.3)";
-  main = "fca";
-}
-
-function impressionsMain() {
-  mainTitle.innerText = "Impressions";
-  mainSubtitle.innerText = "UI/UX, Service Design";
-  mainImage.setAttribute("src", "media/impressions.jpg");
-  mainContainer.style.backgroundColor = "rgba(234, 219, 241, 0.3)";
-  main = "impressions";
-}
-
-function thirdSpaceMain() {
-  mainTitle.innerText = "The Third Space";
-  mainSubtitle.innerText = "Generative Research, Product Concept, UI/UX";
-  mainImage.setAttribute("src", "media/acclimate.jpg");
-  mainContainer.style.backgroundColor = "rgba(201, 215, 248, 0.3)";
-  main = "third space";
-}
-
-rightPreview.addEventListener("click", function() {
-  rightTitle.classList.remove("left-fade");
-  rightSubtitle.classList.remove("left-fade");
-  void rightTitle.offsetWidth;
-  void rightSubtitle.offsetWidth;
-  rightTitle.classList.add("left-fade");
-  rightSubtitle.classList.add("left-fade");
-  timer = setTimeout(rightPreviewAnimation, 300);
-  function rightPreviewAnimation() {
-    mainImageContainer.classList.remove("roll-in");
-    mainTitle.classList.remove("fade-text");
-    mainSubtitle.classList.remove("fade-text");
-    void mainImageContainer.offsetWidth;
-    void mainTitle.offsetWidth;
-    void mainSubtitle.offsetWidth;
-    if (main === "impressions" && right === "fca") {
-      fcaMain();
-      rightTitle.innerText = "Impressions";
-      rightSubtitle.innerText = "UI/UX, Service Design";
-      right = "impressions";
-    } else if (main === "third space" && right === "fca") {
-      fcaMain();
-      rightTitle.innerText = "The Third Space";
-      rightSubtitle.innerText = "Generative Research, Product Concept, UI/UX";
-      right = "third space";
-    } else if (main === "third space" && right === "impressions") {
-      impressionsMain();
-      rightTitle.innerText = "The Third Space";
-      rightSubtitle.innerText = "Generative Research, Product Concept, UI/UX";
-      right = "third space";
-    } else if (main === "fca" && right === "impressions") {
-      impressionsMain();
-      rightTitle.innerText = "Fiat Chrysler AI Concept";
-      rightSubtitle.innerText = "UX Internship, Research, AI";
-      right = "fca";
-    } else if (main === "fca" && right === "third space") {
-      thirdSpaceMain();
-      rightTitle.innerText = "Fiat Chrysler AI Concept";
-      rightSubtitle.innerText = "UX Internship, Research, AI";
-      right = "fca";
-    } else if (main === "impressions" && right === "third space") {
-      thirdSpaceMain();
-      rightTitle.innerText = "Impressions";
-      rightSubtitle.innerText = "UI/UX, Service Design";
-      right = "impressions";
-    }
-    mainTitle.classList.add("fade-text");
-    mainSubtitle.classList.add("fade-text");
-    mainImageContainer.classList.add("roll-in");
+button.addEventListener("click", function() {
+  if(previewItem === "impressions") {
+    impressionsLeft.classList.add("animate-on-scroll");
+    impressionsRight.classList.add("animate-on-scroll");
+    fcaPreview.style.zIndex = "1";
+    fcaRight.classList.add("animate");
+    fcaLeft.classList.add("animate");
+    impressionsPreview.style.zIndex = "-1";
+    impressionsRight.classList.remove("animate");
+    impressionsLeft.classList.remove("animate");
+    previewItem = "fca";
+  } else if (previewItem === "fca") {
+    button.style.transform = "rotate(180deg)";
+    thirdspacePreview.style.zIndex = "1";
+    thirdspaceRight.classList.add("animate");
+    thirdspaceLeft.classList.add("animate");
+    fcaPreview.style.zIndex = "-1";
+    fcaRight.classList.remove("animate");
+    fcaLeft.classList.remove("animate");
+    previewItem = "thirdspace";
+  } else if (previewItem === "thirdspace") {
+    button.style.transform = "rotate(0deg)";
+    impressionsPreview.style.zIndex = "1";
+    impressionsRight.classList.add("animate");
+    impressionsLeft.classList.add("animate");
+    thirdspacePreview.style.zIndex = "-1";
+    thirdspaceRight.classList.remove("animate");
+    thirdspaceLeft.classList.remove("animate");
+    previewItem = "impressions";
   }
 });
 
-leftPreview.addEventListener("click", function() {
-  leftTitle.classList.remove("right-fade");
-  leftSubtitle.classList.remove("right-fade");
-  void leftTitle.offsetWidth;
-  void leftSubtitle.offsetWidth;
-  leftTitle.classList.add("right-fade");
-  leftSubtitle.classList.add("right-fade");
-  timer = setTimeout(leftPreviewAnimation, 300);
-  function leftPreviewAnimation() {
-    mainImageContainer.classList.remove("roll-in");
-    mainTitle.classList.remove("fade-text");
-    mainSubtitle.classList.remove("fade-text");
-    void mainImageContainer.offsetWidth;
-    void mainTitle.offsetWidth;
-    void mainSubtitle.offsetWidth;
-    if (main === "impressions" && left === "fca") {
-      fcaMain();
-      leftTitle.innerText = "Impressions";
-      leftSubtitle.innerText = "UI/UX, Service Design";
-      left = "impressions";
-    } else if (main === "third space" && left === "fca") {
-      fcaMain();
-      leftTitle.innerText = "The Third Space";
-      leftSubtitle.innerText = "Generative Research, Product Concept, UI/UX";
-      left = "third space";
-    } else if (main === "third space" && left === "impressions") {
-      impressionsMain();
-      leftTitle.innerText = "The Third Space";
-      leftSubtitle.innerText = "Generative Research, Product Concept, UI/UX";
-      left = "third space";
-    } else if (main === "fca" && left === "impressions") {
-      impressionsMain();
-      leftTitle.innerText = "Fiat Chrysler AI Concept";
-      leftSubtitle.innerText = "UX Internship, Research, AI";
-      left = "fca";
-    } else if (main === "fca" && left === "third space") {
-      thirdSpaceMain();
-      leftTitle.innerText = "Fiat Chrysler AI Concept";
-      leftSubtitle.innerText = "UX Internship, Research, AI";
-      left = "fca";
-    } else if (main === "impressions" && left === "third space") {
-      thirdSpaceMain();
-      leftTitle.innerText = "Impressions";
-      leftSubtitle.innerText = "UI/UX, Service Design";
-      left = "impressions";
-    }
-    mainTitle.classList.add("fade-text");
-    mainSubtitle.classList.add("fade-text");
-    mainImageContainer.classList.add("roll-in");
+const animateOptions = {
+  threshold: 0.5
+};
+
+const animateOnScroll = new IntersectionObserver(function(entries, animateOnScroll) {
+  impressionsLeft.classList.add("animate-on-scroll");
+  impressionsRight.classList.add("animate-on-scroll");
+  if (!entries[0].isIntersecting) {
+    return;
+  } else {
+    impressionsLeft.classList.add("animate");
+    impressionsRight.classList.add("animate");
+    animateOnScroll.unobserve(entries[0].target);
   }
+}, animateOptions);
+
+animateOnScroll.observe(triggerItem);
+
+//  SUBTITLE FADE IN
+const appearOptions = {
+  threshold: 1
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    entry.target.classList.add("fade-in");
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("apply");
+      appearOnScroll.unobserve(entry.target);
+    }
+  })
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
