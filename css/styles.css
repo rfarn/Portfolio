@@ -8,7 +8,9 @@ p {
   margin: 0;
 }
 
-
+html {
+  font-family: karla;
+}
 
 /* LANDING PAGE STYLING */
 .landing {
@@ -16,7 +18,7 @@ p {
   height: 130vh;
   background: #00071c;
   position: relative;
-  transition: 0.6s background ease-in-out ;
+  transition: 0.6s background ease-in-out, 0.6s color ease-in-out ;
 }
 
 .change-color {
@@ -27,7 +29,6 @@ p {
   width: 100%;
   height: 100vh;
   color: white;
-  font-family: poppins;
   box-sizing: border-box;
   padding: 0px calc(20% + 8px) 5vh calc(20% + 8px);
   display: flex;
@@ -42,21 +43,29 @@ p {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 20vh;
   justify-content: center;
 }
 
 .landing-intro h1 {
-  font-size: 20px;
-  line-height: 36px;
-  font-weight: 500;
-  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #71798F;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  transition: 0.2s color ease-in-out ;
+}
+
+.landing-intro h1.change-text-color {
+  color: white;
 }
 
 .landing-intro h2 {
-  font-size: 20px;
-  line-height: 36px;
-  font-weight: 500;
-  margin-bottom: 24px;
+  font-size: 28px;
+  line-height: 1.5em;
+  font-weight: 700;
 }
 
 .landing-intro a {
@@ -74,8 +83,7 @@ p {
 
 .arrow {
   color: white;
-  font-size: 15px;
-  font-family: roboto;
+  font-size: 14px;
   font-weight: 400;
   opacity: 0;
   animation: fadeIn 0.75s ease-in-out;
@@ -89,7 +97,7 @@ p {
     transform: translateY(20px);
   }
   100% {
-    opacity: 1;
+    opacity: 0.8;
     transform: translateY(0px);
   }
 }
@@ -99,10 +107,10 @@ p {
     padding: 0px calc(16.667% + 16px) 5vh calc(16.667% + 16px);
   }
   .landing-intro h1 {
-    font-size: 20px;
+    font-size: 16px;
   }
   .landing-intro h2 {
-    font-size: 20px;
+    font-size: 32px;
   }
 }
 
@@ -111,10 +119,10 @@ p {
     padding: 0px calc(8.333% + 32px) 5vh calc(8.333% + 32px);
   }
   .landing-intro h1 {
-    font-size: 28px;
+    font-size: 18px;
   }
   .landing-intro h2 {
-    font-size: 28px;
+    font-size: 36px;
   }
 }
 
@@ -165,8 +173,7 @@ main {
 
 .logo {
   text-decoration: none;
-  font-family: poppins;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   color: black;
   transition: all 0.1s ease;
@@ -214,7 +221,7 @@ main {
     height: 67.5px;
   }
   .logo {
-    font-size: 18px;
+    font-size: 20px;
   }
   .hamburger-icon div {
     width: 32px;
@@ -235,7 +242,7 @@ main {
     height: 90px;
   }
   .logo {
-    font-size: 18px;
+    font-size: 20px;
   }
   .hamburger-icon div {
     width: 32px;
@@ -274,9 +281,11 @@ main {
 
 .desktop-menu a {
   text-decoration: none;
+  text-transform: uppercase;
   color: black;
-  font-family: Poppins;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: .07em;
+  font-weight: 400;
   margin: 13px 15px;
 }
 
@@ -336,9 +345,9 @@ main {
 
 .side-menu a {
   text-decoration: none;
-  font-family: poppins;
+  font-weight: 400;
   color: white;
-  font-size: 30px;
+  font-size: 28px;
   margin: 24px;
 }
 
@@ -366,6 +375,9 @@ main {
   .hamburger-icon-close div:last-of-type {
     transform: rotate(45deg) translateY(-9px);
   }
+  .side-menu a {
+    font-size: 32px;
+  }
 }
 
 /* SUBTITLE STYLING */
@@ -377,25 +389,34 @@ main {
   padding: 24px calc(20% + 8px) 60px calc(20% + 8px);
 }
 
+.landing-about-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .subtitle {
-  font-size: 18px;
-  font-family: Poppins;
+  font-size: 26px;
   line-height: 1.5em;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 36px;
   display: block;
 }
 
 .bold-subtitle {
-  font-weight: 600;
+  font-weight: 700;
   display: block;
 }
 
 .small-subtitle {
-  font-size: 16px;
+  font-size: 20px;
   display: block;
   line-height: 1.5em;
   margin-top: 24px;
+  font-weight: 400;
+  color: #71798F;
 }
 
 .fade-in {
@@ -414,9 +435,12 @@ main {
     padding: 60px calc(16.667% + 16px) 90px calc(16.667% + 16px);
   }
   .subtitle {
-    font-size: 20px;
+    font-size: 32px;
     line-height: 1.5em;
     margin-bottom: 60px;
+  }
+  .small-subtitle {
+    font-size: 22px;
   }
 }
 
@@ -425,18 +449,16 @@ main {
     padding: 80px calc(8.333%) 100px calc(8.333%);
   }
   .subtitle {
-    font-size: 30px;
+    font-size: 36px;
     line-height: 1.5em;
-    width: 60%;
+    width: 80%;
     box-sizing: border-box;
     margin: 0px 0px 100px 32px;
   }
-  .medium-subtitle {
-    font-size: 26px;
-  }
   .small-subtitle {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.5em;
+    width: 87.5%;
   }
 }
 
@@ -459,29 +481,29 @@ main {
 }
 
 .preview-info h1 {
-  font-family: poppins;
   color: #00071c;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 24px;
-  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5em;
   width: calc(60vw - 64px);
 }
 
 .preview-info h2 {
-  font-family: roboto;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5em;
   color: #71798f;
-  margin-top: 6px;
   width: calc(60vw - 64px);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
   .preview-info h1 {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 20px;
+  }
+  .preview-info h2 {
+    font-size: 12px;
   }
 }
 
@@ -509,8 +531,9 @@ main {
 }
 
 .desktop-project-preview-container .label {
-  font-family: roboto;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   width: 25%;
   height: 2.5em;
   display: flex;
@@ -527,8 +550,7 @@ main {
 .desktop-project-preview-container #preview-button{
   width: 30px;
   height: 30px;
-  font-family: roboto;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 100%;
   border: none;
   color: white;
@@ -576,22 +598,21 @@ main {
 }
 
 .project-info h1 {
-  font-family: Poppins;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.project-info h2 {
-  font-family: roboto;
-  font-size: 16px;
-  font-weight: 400;
-  color: #71798f;
+  font-size: 26px;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
+.project-info h2 {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #71798f;
+  margin-bottom: 12px;
+}
+
 .project-info p {
-  font-family: roboto;
   font-size: 16px;
   line-height: 1.5em;
 }
@@ -601,7 +622,6 @@ main {
   padding: 0px 1em;
   width: auto;
   height: 2em;
-  font-family: roboto;
   font-size: 14px;
   border: none;
   border-radius: 20px;
@@ -746,15 +766,14 @@ footer {
 
 footer h1 {
   color: #71798f;
-  font-family: poppins;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.5em;
+
 }
 
 footer a {
   color: white;
-  font-family: roboto;
   font-weight: 400;
   font-size: 16px;
   text-decoration: none;

@@ -54,21 +54,20 @@
 }
 
 .project h1 {
-  font-family: poppins;
   color: #00071c;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 24px;
-  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5em;
+  margin-top: 0.5em;
 }
 
 .project h2 {
-  font-family: roboto;
-  font-size: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5em;
   color: #71798f;
-  margin-top: 6px;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
@@ -76,7 +75,10 @@
     margin-bottom: 60px;
   }
   .project h1 {
-    margin-top: 20px;
+    font-size: 20px;
+  }
+  .project h2 {
+    font-size: 12px;
   }
 }
 
@@ -107,10 +109,11 @@
     margin: 80px 0px 0px 0px;
   }
   .project h1 {
-    margin-top: 24px;
     width: 100%;
+    font-size: 22px;
   }
   .project h2 {
+    font-size: 14px;
     width: 100%;
   }
   .project-title {

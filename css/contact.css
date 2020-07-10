@@ -36,16 +36,14 @@
 }
 
 .contact-info h1 {
-  font-family: poppins;
   font-size: 16px;
   color: #71798f;
   line-height: 1.5em;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
 .contact-info a {
-  font-family: roboto;
   font-size: 16px;
   color: #00071c;
   line-height: 1.5em;
@@ -88,10 +86,17 @@
   .fa {
     font-size: 36px;
   }
-
-  #dribbble {
-    width: 32px;
+  .contact-info h1 {
+    font-size: 18px;
   }
+
+  .contact-info a {
+    font-size: 18px;
+  }
+
+ /* #dribbble {
+    width: 32px;
+  }*/
 }
 
 @media (min-width: 801px) {
@@ -101,6 +106,13 @@
   .contact-text {
     box-sizing: border-box;
     padding: 0px 32px;
+  }
+  .contact-info h1 {
+    font-size: 18px;
+  }
+
+  .contact-info a {
+    font-size: 18px;
   }
   .contact-image {
     margin-bottom: 60px;

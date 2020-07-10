@@ -41,9 +41,8 @@
 
 .about-text {
   font-size: 16px;
-  font-family: roboto;
   width: 100%;
-  line-height: 24px;
+  line-height: 1.5em;
   display: flex;
   flex-direction: column;
 }
@@ -52,16 +51,29 @@
   margin-bottom: 36px;
 }
 
-.about-text p:last-of-type {
-  margin-bottom: 0px;
-}
-
 .about-text a {
   color: black;
 }
 
 .about-text a:hover {
   color: #093ace;
+}
+
+.about-text button {
+  padding: 0px 1em;
+  width: auto;
+  height: 2em;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid rgba(113, 121, 143, 0.4);
+  color: #71798f;
+}
+
+.about-text button:hover {
+  background-color: #71798f;
+  color: white;
+  border: none;
 }
 
 @media (min-width: 801px) {

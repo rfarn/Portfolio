@@ -6,9 +6,9 @@ var topOfNav = mainSection.offsetTop;
 
 const landingContent = document.querySelector(".landing-top");
 const landingContent2 = document.querySelector(".arrow");
-// const [textRed, textGreen, textBlue] = [255, 255, 255];
+
 const landingSection = document.querySelector(".landing");
-// const [backgroundRed, backgroundGreen, backgroundBlue] = [0, 7, 28];
+const landingGreyText = document.querySelector(".landing-intro h1");
 
 var faders = document.querySelectorAll(".will-fade");
 
@@ -94,38 +94,20 @@ window.addEventListener("scroll", function() {
     landingContent2.style.animationFillMode = "none";
   } else {
     landingContent.style.position = "fixed";
-    landingContent2.style.opacity = "1";
+    landingContent2.style.opacity = "0.8";
   }
 });
 
-//LANDING TEXT COLOR
-// window.addEventListener("scroll", function() {
-//   const x = 1 + (window.scrollY || window.pageYOffset) / 150;
-//   const [r2, g2, b2] = [textRed / x, textGreen / x, textBlue / x].map(
-//     Math.round
-//   );
-//   landingContent.style.color = `rgb(${r2}, ${g2}, ${b2})`;
-//   landingContent2.style.color = `rgb(${r2}, ${g2}, ${b2})`;
-// });
-
 // LANDING BACKGROUND COLOR
 window.addEventListener("scroll", function() {
-  if (window.scrollY >= landingSection.offsetHeight * (2/5)) {
+  if (window.scrollY >= landingSection.offsetHeight * (1/2)) {
     landingSection.classList.add("change-color");
+    landingGreyText.classList.add("change-text-color");
   } else if (window.scrollY < landingSection.offsetHeight) {
     landingSection.classList.remove("change-color");
+    landingGreyText.classList.remove("change-text-color");
   }
 })
-
-// window.addEventListener("scroll", function() {
-//   const y = 1 + (window.scrollY || window.pageYOffset) / 5;
-//   const [r, g, b] = [
-//     backgroundRed + y,
-//     backgroundGreen + y,
-//     backgroundBlue + y
-//   ].map(Math.round);
-//   landingSection.style.background = `rgb(${r}, ${g}, ${b})`;
-// });
 
 // DESKTOP PROJECT PREVIEW
 button.addEventListener("click", function() {

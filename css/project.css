@@ -34,7 +34,6 @@ a:hover {
 
 /* HERO IMAGE */
 p {
-  font-family: roboto;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5em;
@@ -106,18 +105,18 @@ p {
 }
 
 .project-info h1 {
-  font-family: Poppins;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
 .project-info h2 {
-  font-family: roboto;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #71798f;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .details {
@@ -140,13 +139,11 @@ p {
 }
 
 .details-label {
-  font-family: poppins;
-  font-weight: 600;
+  font-weight: 700;
   color: #71798f;
 }
 
 .details-info {
-  font-family: roboto;
   font-weight: 400;
 }
 
@@ -191,7 +188,7 @@ p {
 
   .project-info {
     z-index: 1;
-    width: 66.664%;
+    width: 83.333%;
     padding-left: calc(16.666% + 16px);
   }
 }
@@ -303,20 +300,20 @@ p {
 }
 
 .summary h2 {
-  font-family: roboto;
   color: #71798f;
-  font-size: 16px;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   font-weight: 400;
   padding-right: 16px;
   line-height: 27px;
 }
 
 .summary h1 {
-  font-family: poppins;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5em;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .problem,
@@ -413,9 +410,8 @@ p {
 .process-section h1 {
   width: 60%;
   box-sizing: border-box;
-  font-family: Poppins;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0px 0px 8px 32px;
   line-height: 1.5em;
 }
@@ -562,7 +558,6 @@ p {
 }
 
 .caption {
-  font-family: roboto;
   font-size: 15px;
   color: #71798f;
   line-height: 1.5em;
@@ -687,7 +682,6 @@ p {
   width: 20%;
   box-sizing: border-box;
   padding: 0px 16px 0px 32px;
-  font-family: roboto;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5em;
@@ -717,7 +711,6 @@ p {
   width: 40%;
   box-sizing: border-box;
   padding-left: 16px;
-  font-family: roboto;
   font-size: 16px;
   line-height: 1.5em;
 }
@@ -812,7 +805,6 @@ p {
   box-sizing: border-box;
   width: 20%;
   padding: 0px 16px 0px 32px;
-  font-family: roboto;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5em;
@@ -835,16 +827,15 @@ p {
 }
 
 .objective-text h1 {
-  font-family: Poppins;
   font-size: 22px;
   color: #eadbf1;
   width: auto;
   margin: 0;
   padding: 0px 8px 0px 16px;
+  font-weight: 700;
 }
 
 .objective-text {
-  font-family: roboto;
   font-size: 16px;
   line-height: 1.5em;
 }
@@ -852,7 +843,7 @@ p {
 .objective-text img {
   width: 18px;
   height: auto;
-  margin-right: 4px;
+  margin-right: 6px;
   box-shadow: none;
 }
 
@@ -888,7 +879,6 @@ p {
 
 .fca-objective-label {
   padding: 0px 16px 0px 0px;
-  font-family: roboto;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5em;
@@ -897,7 +887,6 @@ p {
 .ai-system-objectives h1 {
   padding: 0px;
   color: #b9deb1;
-  font-family: Poppins;
   font-size: 22px;
   width: 23px;
 }
@@ -911,7 +900,6 @@ p {
 .ai-system-objectives .objective-3,
 .ai-system-objectives .objective-4 {
   width: 100%;
-  font-family: roboto;
   font-size: 16px;
   line-height: 1.5em;
   display: flex;
@@ -924,31 +912,35 @@ p {
 }
 
 .memories {
-  font-family: roboto;
   font-size: 16px;
   line-height: 1.5em;
   padding: 0px 16px 0px 23px;
-  font-weight: bold;
+  font-weight: 700;
   color: #57a646;
 }
 
 .bridge-design {
-  font-family: roboto;
   font-size: 16px;
   line-height: 1.5em;
   padding: 0px 16px 0px 23px;
-  font-weight: bold;
+  font-weight: 700;
   color: #47A39C;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
+  .objective {
+    flex-direction: column;
+  }
   .objective-label {
-    width: 25%;
-    padding: 0px 16px 0px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 16px 8px 16px;
   }
 
   .objective-text {
-    width: 75%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 0px 0px 16px;
   }
 
   .objective-text h1 {
@@ -956,7 +948,7 @@ p {
   }
 
   .objective-text img {
-    margin: 0px 8px 0px 8px;
+    margin: 0px 8px 0px 6px;
   }
 
   .fca-objectives {
@@ -965,38 +957,46 @@ p {
 
   .ai-system-objectives {
     grid-template-columns:
-      15% 20px calc(21.25% - 20px) 20px calc(21.25% - 20px) 20px calc(21.25% - 20px)
-      20px calc(20% - 20px);
+      30px calc(50% - 30px) 30px calc(50% - 30px);
+    grid-template-rows: auto auto auto;
   }
 
   .fca-objective-label {
-    padding: 0px 8px 0px 0px;
+    grid-column: span 4;
   }
 
   .ai-system-objectives h1 {
     width: auto;
     text-align: right;
-    padding-right: 4px;
+    padding-right: 8px;
   }
 
   .ai-system-objectives .objective-1,
   .ai-system-objectives .objective-2,
   .ai-system-objectives .objective-3,
   .ai-system-objectives .objective-4 {
-    padding: 0px;
+    padding: 8px 16px 0px 0px;
   }
 
+  #memory-objectives {
+    grid-column: span 2;
+  }
 
   .memory-solution { 
-    grid-template-columns: 15% 21.25% 21.25% 21.25% 21.25%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
   }
 
   .memories {
-    padding: 0px 16px 0px 20px;
+    padding: 8px 16px 0px 20px;
   }
 
   .bridge-design {
-    padding: 0px 16px 0px 20px;
+    padding: 8px 16px 0px 20px;
+  }
+
+  .extra-pad {
+    padding-top: 16px;
   }
 }
 
@@ -1089,9 +1089,8 @@ p {
 }
 
 .features h1 {
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -1121,9 +1120,8 @@ p {
 }
 
 .feature-text h2 {
-  font-family: Poppins;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
@@ -1165,9 +1163,8 @@ p {
 }
 
 .section-title {
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -1483,18 +1480,18 @@ video {
 }
 
 .reflection h2 {
-  font-family: roboto;
   color: #71798f;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   padding-right: 16px;
   line-height: 27px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
 .reflection h1 {
-  font-family: poppins;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5em;
   margin-bottom: 8px;
 }
@@ -1599,8 +1596,6 @@ video {
 .project-arrow {
   color: white;
   font-size: 16px;
-  font-family: roboto;
-  font-weight: 400;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
