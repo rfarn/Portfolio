@@ -142,6 +142,8 @@ button.addEventListener("click", function() {
   }
 });
 
+var previewContainer = document.querySelector(".desktop-project-preview-container");
+
 const animateOptions = {
   threshold: 0.5
 };
@@ -149,9 +151,11 @@ const animateOptions = {
 const animateOnScroll = new IntersectionObserver(function(entries, animateOnScroll) {
   impressionsLeft.classList.add("animate-on-scroll");
   impressionsRight.classList.add("animate-on-scroll");
+  previewContainer.classList.add("fade-in");
   if (!entries[0].isIntersecting) {
     return;
   } else {
+    previewContainer.classList.add("apply");
     impressionsLeft.classList.add("animate");
     impressionsRight.classList.add("animate");
     animateOnScroll.unobserve(entries[0].target);
