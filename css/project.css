@@ -1594,17 +1594,22 @@ video {
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
+  .project-arrow {
+    font-size: 24px;
+  }
   .back-to-top {
     left: 83.333%;
+    width: 45px;
+    height: 45px;
   }
 }
 
 @media (max-width: 499px) {
   .project-arrow {
-    font-size: 20px;
+    font-size: 24px;
   }
   .back-to-top {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     left: calc(100% - 62px);
-}
+  } 
