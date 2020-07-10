@@ -1,8 +1,3 @@
-.main-content nav {
-  position: sticky;
-  top: 0;
-}
-
 .subtitle {
   animation: fadeIn 0.75s ease-in-out;
 }

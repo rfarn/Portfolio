@@ -1,3 +1,4 @@
+var mediaSize = window.innerWidth;
 const nav1 = document.querySelector(".nav-left");
 const nav2 = document.querySelector(".nav-right");
 const desktopNav = document.querySelector(".desktop-menu");
@@ -30,25 +31,40 @@ window.onunload = function() {
   window.scrollTo(0, 0);
 };
 
+
 window.addEventListener("resize", function() {
   topOfNav = mainSection.offsetTop;
+  mediaSize = window.innerWidth;
 })
-
 // STICKY NAV
+var prevScrollpos = window.pageYOffset;
 window.addEventListener("scroll", function() {
-  if (window.scrollY >= topOfNav) {
+  var currentScrollpos = window.pageYOffset;
+  if(window.scrollY >= topOfNav) {
     nav1.style.position = "fixed";
     nav1.style.top = "0";
     nav2.style.position = "fixed";
     nav2.style.top = "0";
     desktopNav.style.position = "fixed";
+    if (prevScrollpos > currentScrollpos) {
+      nav1.style.transform = "translateY(0px)";
+      nav2.style.transform = "translateY(0px)";
+      desktopNav.style.transform = "translateY(0px)";
+    } else {
+      nav1.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+      nav2.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+      desktopNav.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+    }
+    prevScrollpos = currentScrollpos;
   } else {
     nav1.style.position = "absolute";
     nav2.style.position = "absolute";
     desktopNav.style.position = "absolute";
-
   }
-});
+})
+  
+
+  
 
 //LANDING TEXT ANIMATION
 function fade(item) {
@@ -143,10 +159,23 @@ button.addEventListener("click", function() {
 });
 
 var previewContainer = document.querySelector(".desktop-project-preview-container");
+var mobilePreview = document.querySelector(".mobile-project-preview");
 
 const animateOptions = {
   threshold: 0.5
 };
+
+const mobileAnimate = new IntersectionObserver(function(entries, mobileAnimate) {
+  mobilePreview.classList.add("fade-in");
+    if (!entries[0].isIntersecting) {
+      return;
+    } else {
+      mobilePreview.classList.add("apply");
+      mobileAnimate.unobserve(entries[0].target);
+  }
+}, animateOptions);
+
+mobileAnimate.observe(mobilePreview);
 
 const animateOnScroll = new IntersectionObserver(function(entries, animateOnScroll) {
   impressionsLeft.classList.add("animate-on-scroll");

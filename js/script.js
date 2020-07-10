@@ -9,6 +9,9 @@ const desktopMenu = document.querySelector(".desktop-menu");
 var openNav = false;
 var isMobile;
 var winWidth;
+var navRight = document.querySelector(".nav-right");
+var navLeft = document.querySelector(".nav-left");
+var nav = document.querySelector("nav");
 
 // MENU OPEN/CLOSE
 function openAnimation() {
@@ -65,6 +68,11 @@ window.onload = function() {
     desktopMenu.style.display = "flex";
     menuOpenIcon.addEventListener("click", desktopFunction);
   }
+  // if (winWidth <= 499) {
+  //   nav.style.display = "flex";
+  //   nav.appendChild(navRight);
+  //   nav.appendChild(navLeft);
+  // }
 };
 
 window.onresize = function() {

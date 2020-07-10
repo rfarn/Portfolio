@@ -30,7 +30,7 @@ html {
   height: 100vh;
   color: white;
   box-sizing: border-box;
-  padding: 0px calc(20% + 8px) 5vh calc(20% + 8px);
+  padding: 0px 32px 5vh 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -131,32 +131,42 @@ main {
   padding-top: 60px;
   position: relative;
 }
-
-.nav-left {
-  width: 20%;
+nav {
+  background: white;
+  width: 100%;
   height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  padding-right: 8px;
-  z-index: 10;
-  position: fixed;
-  left: 0;
+  display: none;
+  position: absolute;
   top: 0;
 }
 
+.nav-left {
+  width: auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  box-sizing: border-box;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
 .nav-right {
-  width: 20%;
+  width: auto;
   height: 60px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding-left: 8px;
   z-index: 10;
-  position: fixed;
+  position: absolute;
+  justify-content: flex-end;
   right: 0;
   top: 0;
+  padding-right: 32px;
+  transition: transform 0.5s ease-in-out;
 }
 
 #landing-nav-left {
@@ -174,7 +184,7 @@ main {
 .logo {
   text-decoration: none;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 22px;
   color: black;
   transition: all 0.1s ease;
 }
@@ -185,10 +195,10 @@ main {
 }
 
 .hamburger-icon div {
-  width: 26px;
-  height: 2px;
+  width: 38px;
+  height: 3px;
   background-color: black;
-  margin: 5px 0px;
+  margin: 7px 0px;
   border-radius: 1px;
 }
 
@@ -214,11 +224,18 @@ main {
   main {
     padding-top: 67.5px;
   }
+  .nav-left {
+    justify-content: flex-end;
+  }
+  .nav-right {
+    justify-content: flex-start;
+  }
   .nav-left,
   .nav-right {
     width: 16.667%;
     padding: 0px;
     height: 67.5px;
+    position: fixed;
   }
   .logo {
     font-size: 20px;
@@ -235,11 +252,18 @@ main {
   main {
     padding-top: 90px;
   }
+  .nav-left {
+    justify-content: flex-end;
+  }
+  .nav-right {
+    justify-content: flex-start;
+  }
   .nav-left,
   .nav-right {
     width: 8.333%;
     padding: 0px;
     height: 90px;
+    position: fixed;
   }
   .logo {
     font-size: 20px;
@@ -322,19 +346,19 @@ main {
 }
 
 .hamburger-icon-close div {
-  width: 26px;
+  width: 38px;
   height: 2px;
   background-color: white;
-  margin: 5px 0px;
+  margin: 8px 0px;
   border-radius: 1px;
 }
 
 .hamburger-icon-close div:first-of-type {
-  transform: rotate(-45deg) translateY(8.5px);
+  transform: rotate(-45deg) translateY(12.5px);
 }
 
 .hamburger-icon-close div:last-of-type {
-  transform: rotate(45deg) translateY(-8.5px);
+  transform: rotate(45deg) translateY(-12.5px);
 }
 
 .pages {
@@ -386,7 +410,7 @@ main {
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
-  padding: 24px calc(20% + 8px) 60px calc(20% + 8px);
+  padding: 24px 32px 60px 32px;
 }
 
 .landing-about-section {
@@ -475,30 +499,37 @@ main {
 }
 
 .preview img {
-  width: calc(60vw - 64px);
+  width: calc(100vw - 128px);
   height: auto;
-  margin-right: 24px;
+  padding-right: 24px;
 }
 
 .preview-info h1 {
   color: #00071c;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.5em;
-  width: calc(60vw - 64px);
+  width: calc(100vw - 128px);
 }
 
 .preview-info h2 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5em;
   color: #71798f;
-  width: calc(60vw - 64px);
+  width: calc(100vw - 128px);
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
+  .preview {
+    width: calc(66.666vw - 96px);
+  }
+  .preview img {
+    width: 100%;
+    box-sizing: border-box;
+  }
   .preview-info h1 {
     font-size: 20px;
   }
@@ -753,7 +784,7 @@ footer {
   height: 200px;
   background-color: #00071c;
   box-sizing: border-box;
-  padding: 0px calc(20% + 8px);
+  padding: 0px 32px;
 }
 
 .footer-text {
