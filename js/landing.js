@@ -227,25 +227,21 @@ function previewOffset(element) {
 }
 
 var previewHeight = previewOffset(scrollInner);
-var windowHeight = window.innerHeight;
 
 scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
+scrollOuter.style.height = (window.innerHeight * 4) + "px";
 
 window.addEventListener("resize", function() {
   scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
-  scrollOuter.style.height = (previewContainer.clientHeight * 3 + (window.innerHeight - previewContainer.clientHeight)) + "px";
-  previewHeight = previewOffset(scrollInner);
-  windowHeight = window.innerHeight;
 })
 
 window.addEventListener("scroll", function() {
-  scrollOuter.style.height = (windowHeight * 4) + "px";
-  if (window.scrollY >= previewHeight) {
+  if (window.pageYOffset >= previewHeight) {
     scrollInner.style.position = "sticky";
     scrollInner.style.top = "0";
   } 
   console.log(window.innerHeight);
-  if (window.scrollY >= previewHeight && window.scrollY < (previewHeight + windowHeight)) {
+  if (window.pageYOffset >= previewHeight && window.pageYOffset < (previewHeight + window.innerHeight)) {
     button1.style.backgroundColor = "rgba(113,121,143, 1)";
     button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
     button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
@@ -257,7 +253,7 @@ window.addEventListener("scroll", function() {
       thirdspaceUnanimate();
     }
   } 
-  if (window.scrollY >= (previewHeight + windowHeight) && window.scrollY < (previewHeight + windowHeight * 2)) {
+  if (window.pageYOffset >= (previewHeight + window.innerHeight) && window.pageYOffset < (previewHeight + window.innerHeight * 2)) {
     button2.style.backgroundColor = "rgba(113,121,143, 1)";
     button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
     button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
@@ -269,7 +265,7 @@ window.addEventListener("scroll", function() {
       thirdspaceUnanimate();  
     }
   } 
-  if (window.scrollY >= (previewHeight + windowHeight * 2)) {
+  if (window.pageYOffset >= (previewHeight + window.innerHeight * 2)) {
     button3.style.backgroundColor = "rgba(113,121,143, 1)";
     button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
     button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
