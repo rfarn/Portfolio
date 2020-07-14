@@ -16,7 +16,6 @@ var faders = document.querySelectorAll(".will-fade");
 var triggerItem = document.querySelector("#impressions-project-preview");
 var impressionsLeft = document.querySelector("#impressions-project-preview .left-project-preview");
 var impressionsRight = document.querySelector("#impressions-project-preview .right-project-preview");
-var button = document.querySelector("#preview-button");
 var fcaRight = document.querySelector("#fca-project-preview .right-project-preview");
 var fcaLeft = document.querySelector("#fca-project-preview .left-project-preview");
 var thirdspaceRight = document.querySelector("#thirdspace-project-preview .right-project-preview");
@@ -25,6 +24,14 @@ var impressionsPreview = document.querySelector("#impressions-project-preview");
 var fcaPreview = document.querySelector("#fca-project-preview");
 var thirdspacePreview = document.querySelector("#thirdspace-project-preview");
 var previewItem = "impressions";
+var button1 = document.querySelector("#button-1");
+var button2 = document.querySelector("#button-2");
+var button3 = document.querySelector("#button-3");
+
+var previewContainer = document.querySelector(".desktop-project-preview-container");
+var mobilePreview = document.querySelector(".mobile-project-preview");
+var scrollOuter = document.querySelector(".scroll-outer");
+var scrollInner = document.querySelector(".scroll-inner");
 
 //  LOAD AT TOP OF PAGE
 window.onunload = function() {
@@ -126,56 +133,160 @@ window.addEventListener("scroll", function() {
 })
 
 // DESKTOP PROJECT PREVIEW
-button.addEventListener("click", function() {
-  if(previewItem === "impressions") {
-    impressionsLeft.classList.add("animate-on-scroll");
-    impressionsRight.classList.add("animate-on-scroll");
-    fcaPreview.style.zIndex = "1";
-    fcaRight.classList.add("animate");
-    fcaLeft.classList.add("animate");
-    impressionsPreview.style.zIndex = "-1";
-    impressionsRight.classList.remove("animate");
-    impressionsLeft.classList.remove("animate");
-    previewItem = "fca";
-  } else if (previewItem === "fca") {
-    button.style.transform = "rotate(180deg)";
-    thirdspacePreview.style.zIndex = "1";
-    thirdspaceRight.classList.add("animate");
-    thirdspaceLeft.classList.add("animate");
-    fcaPreview.style.zIndex = "-1";
-    fcaRight.classList.remove("animate");
-    fcaLeft.classList.remove("animate");
-    previewItem = "thirdspace";
+function impressionsAnimate() {
+  impressionsPreview.style.zIndex = "1";
+  impressionsRight.classList.add("animate");
+  impressionsLeft.classList.add("animate");
+  previewItem = "impressions";
+}
+
+function impressionsUnanimate() {
+  impressionsLeft.classList.add("animate-on-scroll");
+  impressionsRight.classList.add("animate-on-scroll");
+  impressionsPreview.style.zIndex = "-1";
+  impressionsRight.classList.remove("animate");
+  impressionsLeft.classList.remove("animate");
+}
+
+function fcaAnimate() {
+  fcaPreview.style.zIndex = "1";
+  fcaRight.classList.add("animate");
+  fcaLeft.classList.add("animate");
+  previewItem = "fca"; 
+}
+
+function fcaUnanimate() {
+  fcaPreview.style.zIndex = "-1";
+  fcaRight.classList.remove("animate");
+  fcaLeft.classList.remove("animate");
+}
+
+function thirdspaceAnimate() {
+  thirdspacePreview.style.zIndex = "1";
+  thirdspaceRight.classList.add("animate");
+  thirdspaceLeft.classList.add("animate");    
+  previewItem = "thirdspace";
+}
+
+function thirdspaceUnanimate() {
+  thirdspacePreview.style.zIndex = "-1";
+  thirdspaceRight.classList.remove("animate");
+  thirdspaceLeft.classList.remove("animate");
+}
+
+// (button functions)
+button1.addEventListener("click", function() {
+  button1.style.backgroundColor = "rgba(113,121,143, 1)";
+  button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
+  button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
+  if (previewItem === "fca") {
+    impressionsAnimate();
+    fcaUnanimate();
   } else if (previewItem === "thirdspace") {
-    button.style.transform = "rotate(0deg)";
-    impressionsPreview.style.zIndex = "1";
-    impressionsRight.classList.add("animate");
-    impressionsLeft.classList.add("animate");
-    thirdspacePreview.style.zIndex = "-1";
-    thirdspaceRight.classList.remove("animate");
-    thirdspaceLeft.classList.remove("animate");
-    previewItem = "impressions";
+    impressionsAnimate();
+    thirdspaceUnanimate();
+  }
+})
+
+button2.addEventListener("click", function() {
+  button2.style.backgroundColor = "rgba(113,121,143, 1)";
+  button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
+  button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
+  if (previewItem === "impressions") {
+    fcaAnimate();
+    impressionsUnanimate();       
+  } else if (previewItem === "thirdspace") {
+    fcaAnimate();
+    thirdspaceUnanimate();  
   }
 });
 
-var previewContainer = document.querySelector(".desktop-project-preview-container");
-var mobilePreview = document.querySelector(".mobile-project-preview");
+button3.addEventListener("click", function() {
+  button3.style.backgroundColor = "rgba(113,121,143, 1)";
+  button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
+  button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
+  if (previewItem === "impressions") {
+    thirdspaceAnimate();
+    impressionsUnanimate();
+  } else if (previewItem === "fca") {
+    thirdspaceAnimate();
+    fcaUnanimate()
+  }
+})
 
+// (scrolljacking)
+function previewOffset(element) {
+  var yPosition = 0;
+
+  while(element) {
+    yPosition += element.offsetTop;
+    element = element.offsetParent;
+  }
+
+  return yPosition;
+}
+
+var previewHeight = previewOffset(scrollInner);
+var windowHeight = window.innerHeight;
+
+scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
+
+window.addEventListener("resize", function() {
+  scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
+  scrollOuter.style.height = (previewContainer.clientHeight * 3 + (window.innerHeight - previewContainer.clientHeight)) + "px";
+  previewHeight = previewOffset(scrollInner);
+  windowHeight = window.innerHeight;
+})
+
+window.addEventListener("scroll", function() {
+  scrollOuter.style.height = (windowHeight * 4) + "px";
+  if (window.scrollY >= previewHeight) {
+    scrollInner.style.position = "sticky";
+    scrollInner.style.top = "0";
+  } 
+  console.log(window.innerHeight);
+  if (window.scrollY >= previewHeight && window.scrollY < (previewHeight + windowHeight)) {
+    button1.style.backgroundColor = "rgba(113,121,143, 1)";
+    button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
+    button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
+    if (previewItem === "fca") {
+      impressionsAnimate();
+      fcaUnanimate();
+    } else if (previewItem === "thirdspace") {
+      impressionsAnimate();
+      thirdspaceUnanimate();
+    }
+  } 
+  if (window.scrollY >= (previewHeight + windowHeight) && window.scrollY < (previewHeight + windowHeight * 2)) {
+    button2.style.backgroundColor = "rgba(113,121,143, 1)";
+    button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
+    button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
+    if (previewItem === "impressions") {
+      fcaAnimate();
+      impressionsUnanimate();       
+    } else if (previewItem === "thirdspace") {
+      fcaAnimate();
+      thirdspaceUnanimate();  
+    }
+  } 
+  if (window.scrollY >= (previewHeight + windowHeight * 2)) {
+    button3.style.backgroundColor = "rgba(113,121,143, 1)";
+    button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
+    button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
+    if (previewItem === "impressions") {
+      thirdspaceAnimate();
+      impressionsUnanimate();
+    } else if (previewItem === "fca") {
+      thirdspaceAnimate();
+      fcaUnanimate()
+    }
+  }
+});
+
+// (desktop preview container fade in)
 const animateOptions = {
   threshold: 0.5
 };
-
-const mobileAnimate = new IntersectionObserver(function(entries, mobileAnimate) {
-  mobilePreview.classList.add("fade-in");
-    if (!entries[0].isIntersecting) {
-      return;
-    } else {
-      mobilePreview.classList.add("apply");
-      mobileAnimate.unobserve(entries[0].target);
-  }
-}, animateOptions);
-
-mobileAnimate.observe(mobilePreview);
 
 const animateOnScroll = new IntersectionObserver(function(entries, animateOnScroll) {
   impressionsLeft.classList.add("animate-on-scroll");
@@ -192,6 +303,19 @@ const animateOnScroll = new IntersectionObserver(function(entries, animateOnScro
 }, animateOptions);
 
 animateOnScroll.observe(triggerItem);
+
+// (mobile preview container fade in)
+const mobileAnimate = new IntersectionObserver(function(entries, mobileAnimate) {
+  mobilePreview.classList.add("fade-in");
+    if (!entries[0].isIntersecting) {
+      return;
+    } else {
+      mobilePreview.classList.add("apply");
+      mobileAnimate.unobserve(entries[0].target);
+  }
+}, animateOptions);
+
+mobileAnimate.observe(mobilePreview);
 
 //  SUBTITLE FADE IN
 const appearOptions = {
