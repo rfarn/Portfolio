@@ -133,6 +133,8 @@ window.addEventListener("scroll", function() {
 })
 
 // DESKTOP PROJECT PREVIEW
+scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
+
 function impressionsAnimate() {
   impressionsPreview.style.zIndex = "1";
   impressionsRight.classList.add("animate");
@@ -214,6 +216,40 @@ button3.addEventListener("click", function() {
   }
 })
 
+// (desktop preview container fade in)
+const animateOptions = {
+  threshold: 0.5
+};
+
+const animateOnScroll = new IntersectionObserver(function(entries, animateOnScroll) {
+  impressionsLeft.classList.add("animate-on-scroll");
+  impressionsRight.classList.add("animate-on-scroll");
+  previewContainer.classList.add("fade-in");
+  if (!entries[0].isIntersecting) {
+    return;
+  } else {
+    previewContainer.classList.add("apply");
+    impressionsLeft.classList.add("animate");
+    impressionsRight.classList.add("animate");
+    animateOnScroll.unobserve(entries[0].target);
+  }
+}, animateOptions);
+
+animateOnScroll.observe(triggerItem);
+
+// (mobile preview container fade in)
+const mobileAnimate = new IntersectionObserver(function(entries, mobileAnimate) {
+  mobilePreview.classList.add("fade-in");
+    if (!entries[0].isIntersecting) {
+      return;
+    } else {
+      mobilePreview.classList.add("apply");
+      mobileAnimate.unobserve(entries[0].target);
+  }
+}, animateOptions);
+
+mobileAnimate.observe(mobilePreview);
+
 // (scrolljacking)
 function previewOffset(element) {
   var yPosition = 0;
@@ -228,7 +264,6 @@ function previewOffset(element) {
 
 var previewHeight = previewOffset(scrollInner);
 
-scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
 scrollOuter.style.height = (window.innerHeight * 4) + "px";
 
 window.addEventListener("resize", function() {
@@ -278,40 +313,6 @@ window.addEventListener("scroll", function() {
     }
   }
 });
-
-// (desktop preview container fade in)
-const animateOptions = {
-  threshold: 0.5
-};
-
-const animateOnScroll = new IntersectionObserver(function(entries, animateOnScroll) {
-  impressionsLeft.classList.add("animate-on-scroll");
-  impressionsRight.classList.add("animate-on-scroll");
-  previewContainer.classList.add("fade-in");
-  if (!entries[0].isIntersecting) {
-    return;
-  } else {
-    previewContainer.classList.add("apply");
-    impressionsLeft.classList.add("animate");
-    impressionsRight.classList.add("animate");
-    animateOnScroll.unobserve(entries[0].target);
-  }
-}, animateOptions);
-
-animateOnScroll.observe(triggerItem);
-
-// (mobile preview container fade in)
-const mobileAnimate = new IntersectionObserver(function(entries, mobileAnimate) {
-  mobilePreview.classList.add("fade-in");
-    if (!entries[0].isIntersecting) {
-      return;
-    } else {
-      mobilePreview.classList.add("apply");
-      mobileAnimate.unobserve(entries[0].target);
-  }
-}, animateOptions);
-
-mobileAnimate.observe(mobilePreview);
 
 //  SUBTITLE FADE IN
 const appearOptions = {
