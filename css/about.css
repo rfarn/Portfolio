@@ -47,25 +47,20 @@
 }
 
 .about-text a {
-  color: black;
-}
-
-.about-text a:hover {
-  color: #093ace;
-}
-
-.about-text button {
-  padding: 0px 1em;
-  width: auto;
+  width: 140px;
   height: 2em;
   font-size: 14px;
   border-radius: 20px;
   background-color: white;
   border: 1px solid rgba(113, 121, 143, 0.4);
   color: #71798f;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-text button:hover {
+.about-text a:hover {
   background-color: #71798f;
   color: white;
   border: none;
