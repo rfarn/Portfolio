@@ -45,7 +45,7 @@ p {
   flex-direction: column;
   justify-content: center;
   padding: 80px 0px;
-  
+  /*background-color: white;*/
 }
 
 #impressions-hero-image {
@@ -56,35 +56,35 @@ p {
 }
 
 #fca-hero-image {
-  background: url(../media/fca2.png);
+  background-image: url(../media/fca2.png);
   background-repeat: no-repeat;
   background-position: 60% 100%;
   background-size: auto 100%;
 }
 
 #thirdspace-hero-image {
-  background: url(../media/acclimate2.png);
+  background-image: url(../media/acclimate2.png);
   background-repeat: no-repeat;
   background-position: 60% 100%;
   background-size: auto 100%;
 }
 
 #edge-hero-image {
-  background: url(../media/edge2.png);
+  background-image: url(../media/edge2.png);
   background-repeat: no-repeat;
   background-position: 60% 100%;
   background-size: auto 100%;
 }
 
 #bridge-hero-image {
-  background: url(../media/bridge2.png);
+  background-image: url(../media/bridge2.png);
   background-repeat: no-repeat;
   background-position: 60% 100%;
   background-size: auto 100%;
 }
 
 #spoint-hero-image {
-  background: url(../media/spoint2.png);
+  background-image: url(../media/spoint2.png);
   background-repeat: no-repeat;
   background-position: 60% 100%;
   background-size: auto 100%;

@@ -43,32 +43,40 @@ window.addEventListener("resize", function() {
   topOfNav = mainSection.offsetTop;
   mediaSize = window.innerWidth;
 })
+
 // STICKY NAV
 var prevScrollpos = window.pageYOffset;
-window.addEventListener("scroll", function() {
-  var currentScrollpos = window.pageYOffset;
-  if(window.scrollY >= topOfNav) {
-    nav1.style.position = "fixed";
-    nav1.style.top = "0";
-    nav2.style.position = "fixed";
-    nav2.style.top = "0";
-    desktopNav.style.position = "fixed";
-    if (prevScrollpos > currentScrollpos) {
-      nav1.style.transform = "translateY(0px)";
-      nav2.style.transform = "translateY(0px)";
-      desktopNav.style.transform = "translateY(0px)";
+
+
+
+  window.addEventListener("scroll", function() {
+    var currentScrollpos = window.pageYOffset;
+
+    if(window.scrollY >= topOfNav) {
+      nav1.style.position = "fixed";
+      nav1.style.top = "0";
+      nav2.style.position = "fixed";
+      nav2.style.top = "0";
+      desktopNav.style.position = "fixed";
+      if (mediaSize <= 499) {
+        if (prevScrollpos > currentScrollpos) {
+          nav1.style.transform = "translateY(0px)";
+          nav2.style.transform = "translateY(0px)";
+          desktopNav.style.transform = "translateY(0px)";
+        } else {
+          nav1.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+          nav2.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+          desktopNav.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+        }
+        prevScrollpos = currentScrollpos;
+      }
     } else {
-      nav1.style.transform = "translateY(-" + nav1.clientHeight + "px)";
-      nav2.style.transform = "translateY(-" + nav1.clientHeight + "px)";
-      desktopNav.style.transform = "translateY(-" + nav1.clientHeight + "px)";
+      nav1.style.position = "absolute";
+      nav2.style.position = "absolute";
+      desktopNav.style.position = "absolute";
     }
-    prevScrollpos = currentScrollpos;
-  } else {
-    nav1.style.position = "absolute";
-    nav2.style.position = "absolute";
-    desktopNav.style.position = "absolute";
-  }
-})
+  })
+
   
 
   
@@ -264,7 +272,7 @@ function previewOffset(element) {
 
 var previewHeight = previewOffset(scrollInner);
 
-scrollOuter.style.height = (window.innerHeight * 4) + "px";
+scrollOuter.style.height = (window.innerHeight * 3) + "px";
 
 window.addEventListener("resize", function() {
   scrollInner.style.paddingBottom = ((window.innerHeight - previewContainer.clientHeight) / 2) + "px";
@@ -275,8 +283,7 @@ window.addEventListener("scroll", function() {
     scrollInner.style.position = "sticky";
     scrollInner.style.top = "0";
   } 
-  console.log(window.innerHeight);
-  if (window.pageYOffset >= previewHeight && window.pageYOffset < (previewHeight + window.innerHeight)) {
+  if (window.pageYOffset >= previewHeight && window.pageYOffset < (previewHeight + window.innerHeight * 0.75)) {
     button1.style.backgroundColor = "rgba(113,121,143, 1)";
     button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
     button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
@@ -288,7 +295,7 @@ window.addEventListener("scroll", function() {
       thirdspaceUnanimate();
     }
   } 
-  if (window.pageYOffset >= (previewHeight + window.innerHeight) && window.pageYOffset < (previewHeight + window.innerHeight * 2)) {
+  if (window.pageYOffset >= (previewHeight + window.innerHeight * 0.75) && window.pageYOffset < (previewHeight + window.innerHeight * 1.5)) {
     button2.style.backgroundColor = "rgba(113,121,143, 1)";
     button3.style.backgroundColor = "rgba(113,121,143, 0.1)";
     button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
@@ -300,7 +307,7 @@ window.addEventListener("scroll", function() {
       thirdspaceUnanimate();  
     }
   } 
-  if (window.pageYOffset >= (previewHeight + window.innerHeight * 2)) {
+  if (window.pageYOffset >= (previewHeight + window.innerHeight * 1.5)) {
     button3.style.backgroundColor = "rgba(113,121,143, 1)";
     button1.style.backgroundColor = "rgba(113,121,143, 0.1)";
     button2.style.backgroundColor = "rgba(113,121,143, 0.1)";
