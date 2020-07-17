@@ -77,10 +77,6 @@ var prevScrollpos = window.pageYOffset;
     }
   })
 
-  
-
-  
-
 //LANDING TEXT ANIMATION
 function fade(item) {
   const text = document.querySelector(item);
@@ -93,7 +89,7 @@ function fade(item) {
   }
 
   let char = 0;
-  let timer = setInterval(onTick, 50);
+  let timer = setInterval(onTick, 40);
 
   function onTick() {
     const span = text.querySelectorAll("span")[char];
