@@ -89,7 +89,7 @@ function fade(item) {
   }
 
   let char = 0;
-  let timer = setInterval(onTick, 40);
+  let timer = setInterval(onTick, 35);
 
   function onTick() {
     const span = text.querySelectorAll("span")[char];
