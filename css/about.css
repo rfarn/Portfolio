@@ -72,11 +72,11 @@
   }
   .about-content {
     box-sizing: border-box;
-    padding: 0px 32px;
+    padding: 0px;
     width: auto;
     display: grid;
-    grid-template-columns: calc(45%) calc(45%);
-    grid-gap: 0px 10%;
+    grid-template-columns: 44.444% 44.444%;
+    grid-gap: 0px 11.112%;
   }
   .about-text p {
     line-height: 30px;

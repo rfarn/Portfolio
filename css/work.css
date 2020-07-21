@@ -80,10 +80,10 @@
 @media (min-width: 801px) {
   .project-grid {
     box-sizing: border-box;
-    padding: 0px 32px;
+    padding: 0px;
     display: grid;
-    grid-template-columns: 45% 45%;
-    grid-column-gap: 10%;
+    grid-template-columns: 44.444% 44.444%;
+    grid-column-gap: 11.112%;
   }
   .project {
     margin-bottom: 80px;
