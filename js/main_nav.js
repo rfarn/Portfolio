@@ -12,11 +12,6 @@ var prevScrollpos = window.pageYOffset;
 
 window.addEventListener("scroll", function() {
 	var currentScrollpos = window.pageYOffset;
-
-	mainNavRight.style.position = "fixed";
-    mainNavRight.style.top = "0";
-    mainNavLeft.style.position = "fixed";
-    mainNavLeft.style.top = "0";
     if (mediaSize <= 499) {
          if (prevScrollpos > currentScrollpos) {
             mainNavRight.style.transform = "translateY(0px)";

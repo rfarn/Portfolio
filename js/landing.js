@@ -7,6 +7,8 @@ var topOfNav = mainSection.offsetTop;
 
 const landingContent = document.querySelector(".landing-top");
 const landingContent2 = document.querySelector(".arrow");
+var landingNavRight = document.querySelector("#landing-nav-right");
+var landingNavLeft = document.querySelector("#landing-nav-left");
 
 const landingSection = document.querySelector(".landing");
 const landingGreyText = document.querySelector(".landing-intro h1");
@@ -35,7 +37,7 @@ var scrollInner = document.querySelector(".scroll-inner");
 
 //  LOAD AT TOP OF PAGE
 window.onunload = function() {
-  window.scrollTo(0, 0);
+  window.scroll({top: 0});
 };
 
 
@@ -47,17 +49,10 @@ window.addEventListener("resize", function() {
 // STICKY NAV
 var prevScrollpos = window.pageYOffset;
 
-
-
   window.addEventListener("scroll", function() {
     var currentScrollpos = window.pageYOffset;
 
     if(window.scrollY >= topOfNav) {
-      nav1.style.position = "fixed";
-      nav1.style.top = "0";
-      nav2.style.position = "fixed";
-      nav2.style.top = "0";
-      desktopNav.style.position = "fixed";
       if (mediaSize <= 499) {
         if (prevScrollpos > currentScrollpos) {
           nav1.style.transform = "translateY(0px)";
@@ -70,11 +65,7 @@ var prevScrollpos = window.pageYOffset;
         }
         prevScrollpos = currentScrollpos;
       }
-    } else {
-      nav1.style.position = "absolute";
-      nav2.style.position = "absolute";
-      desktopNav.style.position = "absolute";
-    }
+    } 
   })
 
 //LANDING TEXT ANIMATION
@@ -127,13 +118,22 @@ window.addEventListener("scroll", function() {
 
 // LANDING BACKGROUND COLOR
 window.addEventListener("scroll", function() {
-  if (window.scrollY >= landingSection.offsetHeight * (1/2)) {
+  if (window.scrollY >= landingSection.offsetHeight * (0.9)) {
     landingSection.classList.add("change-color");
     landingGreyText.classList.add("change-text-color");
+    landingNavLeft.style.opacity = "1";
+    landingNavRight.style.opacity = "1";
   } else if (window.scrollY < landingSection.offsetHeight) {
     landingSection.classList.remove("change-color");
     landingGreyText.classList.remove("change-text-color");
+    landingNavLeft.style.opacity = "0";
+    landingNavRight.style.opacity = "0";
   }
+})
+
+// SCROLL DOWN BUTTON 
+landingContent2.addEventListener("click", function() {
+  window.scroll({top: topOfNav, behavior: "smooth"});
 })
 
 // DESKTOP PROJECT PREVIEW
