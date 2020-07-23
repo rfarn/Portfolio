@@ -27,7 +27,7 @@ window.addEventListener("scroll", function() {
   mainNavLeft.style.position = "fixed";
   mainNavLeft.style.top = "0";
 
-  if (mediaSize <= 499) {
+  if (mediaSize <= 575) {
     if (prevScrollpos > currentScrollpos) {
       mainNavRight.style.transform = "translateY(0px)";
         mainNavLeft.style.transform = "translateY(0px)";

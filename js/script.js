@@ -56,13 +56,13 @@ var mobileCloseFunction = function() {
 window.onload = function() {
   //determines which nav is functioning on load of page
   winWidth = window.innerWidth;
-  if (winWidth <= 800) {
+  if (winWidth <= 991) {
     //if mobile width, then mobile nav functions
     isMobile = true;
     sideMenu.style.display = "block";
     menuOpenIcon.addEventListener("click", mobileOpenFunction);
     sideMenuCloseIcon.addEventListener("click", mobileCloseFunction);
-  } else if (winWidth > 800) {
+  } else if (winWidth > 991) {
     //if desktop width, then desktop nav functions
     isMobile = false;
     desktopMenu.style.display = "flex";
@@ -78,7 +78,7 @@ window.onload = function() {
 window.onresize = function() {
   //determines which nav is functioning on resize of page
   winWidth = window.innerWidth;
-  if (winWidth <= 800) {
+  if (winWidth <= 991) {
     //if mobile width
     if (isMobile === false) {
       //and previous nav was desktop
@@ -91,7 +91,7 @@ window.onresize = function() {
       menuOpenIcon.addEventListener("click", mobileOpenFunction);
       sideMenuCloseIcon.addEventListener("click", mobileCloseFunction);
     }
-  } else if (winWidth > 800) {
+  } else if (winWidth > 991) {
     //if desktop width
     if (isMobile === true) {
       //and previous nav was mobile

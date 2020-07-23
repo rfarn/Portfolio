@@ -2,19 +2,6 @@ var interactions = document.querySelectorAll(".memory-interaction img");
 var jpgs = ["../media/process/FCA_memories1.jpg", "../media/process/FCA_memories2.jpg", "../media/process/FCA_memories3.jpg", "../media/process/FCA_memories4.jpg", "../media/process/FCA_memories5.jpg"];
 var gifs = ["../media/process/FCA_memories1.gif", "../media/process/FCA_memories2.gif", "../media/process/FCA_memories3.gif", "../media/process/FCA_memories4.gif", "../media/process/FCA_memories5.gif"];
 
-// function playGif(interaction, jpg, gif) {
-// 	interaction.addEventListener("mouseover", function() {
-// 		interaction.setAttribute("src", gif);
-// 		interaction.addEventListener("mouseout", function() {
-// 			interaction.setAttribute("src", jpg);
-// 		})
-// 	});
-// }
-
-// for (var i = 0; i < interactions.length; i++) {
-// 	playGif(interactions[i], jpgs[i], gifs[i]);
-// }
-
 function getPosition(element) {
     var yPosition = 0;
 

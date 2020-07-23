@@ -65,7 +65,7 @@
   color: #71798f;
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .project {
     margin-bottom: 60px;
   }
@@ -77,7 +77,7 @@
   }
 }
 
-@media (min-width: 801px) and (max-width: 1919px) {
+@media (min-width: 992px) and (max-width: 1919px) {
   .project-grid {
     box-sizing: border-box;
     padding: 0px;

@@ -106,7 +106,7 @@ body {
   }
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .landing-top {
     padding: 0px calc(16.667% + 16px) 5vh calc(16.667% + 16px);
   }
@@ -118,7 +118,7 @@ body {
   }
 }
 
-@media (min-width: 801px) and (max-width: 1919px){
+@media (min-width: 992px) and (max-width: 1919px){
   .landing-top {
     padding: 0px 12.5% 5vh 12.5%;
   }
@@ -233,7 +233,7 @@ nav {
   background-color: #093ace;
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   main {
     padding-top: 67.5px;
   }
@@ -261,7 +261,7 @@ nav {
   }
 }
 
-@media (min-width: 801px) and (max-width: 1919px) {
+@media (min-width: 992px) and (max-width: 1919px) {
   main {
     padding-top: 90px;
   }
@@ -427,7 +427,7 @@ nav {
   opacity: 1;
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .hamburger-icon-close {
     height: 67.5px;
     width: 16.667%;
@@ -553,7 +553,7 @@ nav {
 }
 
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .page-content {
     padding: 60px calc(16.667% + 16px) 90px calc(16.667% + 16px);
   }
@@ -570,7 +570,7 @@ nav {
   }
 }
 
-@media (min-width: 801px) and (max-width: 1919px){
+@media (min-width: 992px) and (max-width: 1919px){
   .page-content {
     padding: 80px 12.5% 100px 12.5%;
   }
@@ -879,7 +879,7 @@ nav {
   letter-spacing: 0.07em;
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .preview {
     width: calc(66.666vw - 96px);
   }
@@ -895,7 +895,7 @@ nav {
   }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 992px) {
   .mobile-project-preview {
     display: none;
   }
@@ -1175,7 +1175,7 @@ nav {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 991px) {
   .scroll-outer {
     display: none;
   }
@@ -1227,14 +1227,14 @@ footer a {
   line-height: 1.5em;
 }
 
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 991px) {
   footer {
     box-sizing: border-box;
     padding: 0px calc(16.667% + 16px);
   }
 }
 
-@media (min-width: 801px) and (max-width: 1919px) {
+@media (min-width: 992px) and (max-width: 1919px) {
   footer {
     box-sizing: border-box;
     padding: 0px 12.5%;

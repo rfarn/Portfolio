@@ -53,7 +53,7 @@ var prevScrollpos = window.pageYOffset;
     var currentScrollpos = window.pageYOffset;
 
     if(window.scrollY >= topOfNav) {
-      if (mediaSize <= 499) {
+      if (mediaSize <= 575) {
         if (prevScrollpos > currentScrollpos) {
           nav1.style.transform = "translateY(0px)";
           nav2.style.transform = "translateY(0px)";
