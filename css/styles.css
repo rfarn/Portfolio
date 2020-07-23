@@ -1217,8 +1217,14 @@ footer a {
   line-height: 1.5em;
 }
 .email {
-  margin: 12px 0px;
+  margin: 12px 0px 24px 0px;
   line-height: 24px;
+}
+.note {
+  color: #71798f;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
 @media (min-width: 500px) and (max-width: 800px) {
@@ -1244,6 +1250,9 @@ footer a {
     font-size: 18px;
   }
   footer a {
+    font-size: 18px;
+  }
+  .note {
     font-size: 18px;
   }
 }
