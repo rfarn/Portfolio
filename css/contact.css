@@ -94,7 +94,7 @@
   }*/
 }
 
-@media (min-width: 801px) {
+@media (min-width: 801px) and (max-width: 1919px) {
   .subtitle {
     margin-bottom: 70px;
   }
@@ -118,5 +118,32 @@
 
   #dribbble {
     width: 26px;
+  }
+}
+
+@media  (min-width: 1920px) {
+  .subtitle {
+    margin-bottom: 70px;
+  }
+  .contact-text {
+    box-sizing: border-box;
+    padding: 0px;
+  }
+  .contact-info h1 {
+    font-size: 20px;
+  }
+
+  .contact-info a {
+    font-size: 20px;
+  }
+  .contact-image {
+    margin-bottom: 60px;
+  }
+  .fa {
+    font-size: 32px;
+  }
+
+  #dribbble {
+    width: 28px;
   }
 }

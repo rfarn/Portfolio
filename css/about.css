@@ -66,7 +66,7 @@
   border: none;
 }
 
-@media (min-width: 801px) {
+@media (min-width: 801px) and (max-width: 1919px) {
   .about-image {
     margin-bottom: 60px;
   }
@@ -81,5 +81,28 @@
   .about-text p {
     line-height: 30px;
     margin: 0px 0px 2em 0px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .about-image {
+    margin-bottom: 60px;
+  }
+  .about-content {
+    box-sizing: border-box;
+    padding: 0px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 44.444% 44.444%;
+    grid-gap: 0px 11.112%;
+  }
+  .about-text p {
+    line-height: 30px;
+    margin: 0px 0px 2em 0px;
+    font-size: 18px;
+  }
+  .about-text a {
+    font-size: 16px;
+    width: 160px;
   }
 }
