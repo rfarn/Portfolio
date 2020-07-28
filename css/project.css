@@ -454,7 +454,7 @@ p {
 .process-section h1 {
   width: 61.111%;
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
   padding: 0px 0px 8px 0px;
   line-height: 1.5em;
@@ -496,7 +496,7 @@ p {
   }
   .process-section h1 {
     width: 50%;
-    font-size: 20px;
+    font-size: 23px;
     padding: 0px 0px 8px 0px;
   }
   .process-section p {

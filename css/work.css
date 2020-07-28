@@ -120,6 +120,9 @@
     transform: translateY(0px);
     opacity: 1;
   }
+  .desktop-subtitle {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1920px) {
@@ -164,5 +167,8 @@
   .project-image-container:hover ~ .project-title {
     transform: translateY(0px);
     opacity: 1;
+  }
+  .desktop-subtitle {
+    width: 50%;
   }
 }
