@@ -23,6 +23,10 @@ window.addEventListener("scroll", function() {
             navItems.style.transform = "translateY(-" + mainNavRight.clientHeight + "px)";
         }
         prevScrollpos = currentScrollpos;
+    } else if (mediaSize > 575) {
+        mainNavRight.style.transform = "translateY(0px)";
+        mainNavLeft.style.transform = "translateY(0px)";
+        navItems.style.transform = "translateY(0px)";
     }
    
 })
