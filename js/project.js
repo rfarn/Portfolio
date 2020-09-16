@@ -46,20 +46,22 @@ window.addEventListener("scroll", function() {
 })
 
 // MODAL FUNCTION
-function openCloseModal(image, modal) {
-	image.addEventListener("click", function() {
-		modal.style.display = "flex";
-	})	
-	window.addEventListener("click", function(event) {
-	if(event.target == modal) {
-		modal.style.display = "none";
-	}
-})
-}
+if (mediaSize > 575) {
+  function openCloseModal(image, modal) {
+  	image.addEventListener("click", function() {
+  		modal.style.display = "flex";
+  	})	
+  	window.addEventListener("click", function(event) {
+  	if(event.target == modal) {
+  		modal.style.display = "none";
+  	}
+  })
+  }
 
-for(var i = 0; i < modals.length; i++) {
-	modalImages[i].setAttribute("src", images[i].getAttribute("src"));
-	openCloseModal(images[i], modals[i]);
+  for(var i = 0; i < modals.length; i++) {
+  	modalImages[i].setAttribute("src", images[i].getAttribute("src"));
+  	openCloseModal(images[i], modals[i]);
+  }
 }
 
 // // BACK TO TOP BUTTON
