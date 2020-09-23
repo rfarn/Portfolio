@@ -1573,7 +1573,6 @@ video {
 
 #impressions-wireframes {
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
 }
 
 #impressions-wireframes-2 {
