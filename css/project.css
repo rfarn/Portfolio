@@ -97,6 +97,13 @@ p {
   background-size: auto 100%;
 }
 
+#fakenews-hero-image {
+  background-image: url(../media/fakenews2.png);
+  background-repeat: no-repeat;
+  background-position: 60% 100%;
+  background-size: auto 100%;
+}
+
 .project-info {
   box-sizing: border-box;
   width: 50%;
@@ -177,7 +184,7 @@ p {
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
-  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image {
+  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image, #fakenews-hero-image {
     background-size: auto 90%;
     background-position: 50% 100%;
   }
@@ -219,6 +226,10 @@ p {
     background: rgba(255, 255, 255, 0.5);
   }
 
+  #fakenews-hero-image .hero-image-cover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+
   .project-info {
     z-index: 1;
     width: 83.333%;
@@ -227,7 +238,7 @@ p {
 }
 
 @media (max-width: 575px) {
-  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image {
+  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image, #fakenews-hero-image {
     background-size: auto 50%;
     background-position: 65% 100%;
   }
@@ -267,6 +278,10 @@ p {
 
   #spoint-hero-image .hero-image-cover {
     background: rgba(255, 255, 255, 0.55);
+  }
+
+  #fakenews-hero-image .hero-image-cover {
+    background: rgba(255, 255, 255, 0.5);
   }
 
   .project-info {
@@ -321,6 +336,10 @@ p {
 
 #spoint-summary {
   background-color: rgba(148, 148, 148, 0.4);
+}
+
+#fakenews-summary {
+  background-color: rgba(255, 98, 126, 0.3);
 }
 
 .context {
@@ -643,7 +662,11 @@ p {
   height: auto;
 }
 
-.single-process-image .caption {
+.center-section .double-process-image .caption {
+  justify-content: flex-start;
+}
+
+.center-section .caption {
   display: flex;
   justify-content: center;
 }
@@ -667,6 +690,15 @@ p {
 .three-images img {
   width: 29.627%;
   height: 100%;
+}
+
+.one-of-three {
+  width: 29.627%;
+  height: 100%;
+}
+
+.one-of-three img {
+  width: 100%;
 }
 
 .generative-activity-caption {
@@ -719,10 +751,15 @@ p {
 
   .single-process-image {
     width: calc(100% - 32px);
+    padding: 40px 16px 0px 16px;
   }
 
   .three-images {
     padding: 40px 16px 0px 16px;
+  }
+
+  #caption-alone {
+    padding: 0px 16px;
   }
 
   .generative-activity-caption {
@@ -768,6 +805,10 @@ p {
   .one-image {
     padding: 30px 0px 0px 0px;
   }
+
+  .one-of-three {
+    width: 100%;
+  }
 }
 
 /*INSIGHT*/
@@ -804,6 +845,10 @@ p {
 
 .edge-insight-label {
   border-right: 3px solid #E3F4FC;
+}
+
+.fakenews-insight-label {
+  border-right: 3px solid #FF627E;
 }
 
 .center-insight .insight-text {
@@ -924,6 +969,11 @@ p {
 
   .edge-insight-label {
     border-bottom: 3px solid #E3F4FC;
+    border-right: none;
+  }
+
+  .fakenews-insight-label {
+    border-bottom: 3px solid #FF627E;
     border-right: none;
   }
 
@@ -1341,6 +1391,10 @@ p {
   color: #57a646;
 }
 
+.fakenews-feature h2 {
+  color: #FF627E;
+}
+
 /*in edge*/
 .features .one-image { 
   padding: 40px 0px 0px 0px;
@@ -1502,6 +1556,10 @@ video {
     box-sizing: border-box;
     padding: 0px 16px;
   }
+
+  .feature-video .double-process-image {
+    padding: 0px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -1653,6 +1711,21 @@ video {
   box-shadow: none;
 }
 
+#fakenews-prototype {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 16px;
+}
+
+#fakenews-prototype img {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: 1920px) {
   .wireframes {
     margin: 50px 0px 0px 0px;
@@ -1687,6 +1760,10 @@ video {
   #acclimate-prototype {
     padding: 0px 16px;
   }
+
+  #fakenews-prototype {
+    padding: 0px 16px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -1697,7 +1774,6 @@ video {
 
   #impressions-wireframes {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
   }
 
   .extra-wireframe {
@@ -1727,6 +1803,10 @@ video {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 1fr;
     grid-gap: 8px;
+  }
+
+  #fakenews-prototype {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
