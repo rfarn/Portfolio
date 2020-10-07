@@ -974,7 +974,7 @@ nav {
   margin: 0px;
 }
 
-#fca-project-preview {
+#zoom-project-preview {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -982,7 +982,7 @@ nav {
   /*display: none;*/
 }
 
-#thirdspace-project-preview {
+#fca-project-preview {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -1054,6 +1054,17 @@ nav {
   border: none;
 }
 
+#zoom-full-project {
+  border: 1px solid rgba(45, 140, 255, 0.2);
+  color: #2D8CFF;
+}
+
+#zoom-full-project:hover {
+  background-color: #2D8CFF;
+  color: white;
+  border: none;
+}
+
 #fca-full-project {
   border: 1px solid #B9DEB1;
   color: #57A646;
@@ -1061,17 +1072,6 @@ nav {
 
 #fca-full-project:hover {
   background-color: #57A646;
-  color: white;
-  border: none;
-}
-
-#thirdspace-full-project {
-  border: 1px solid #C9D7F8;
-  color: #6C92EC;
-}
-
-#thirdspace-full-project:hover {
-  background-color: #6C92EC;
   color: white;
   border: none;
 }
@@ -1112,6 +1112,28 @@ nav {
   opacity: 1;
 }
 
+#zoom-project-preview .left-project-preview{
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.75s ease-in-out;
+}
+
+#zoom-project-preview .right-project-preview {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.75s ease-in-out;
+}
+
+#zoom-project-preview .left-project-preview.animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#zoom-project-preview .right-project-preview.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 #fca-project-preview .left-project-preview{
   transform: translateX(-100%);
   opacity: 0;
@@ -1130,28 +1152,6 @@ nav {
 }
 
 #fca-project-preview .right-project-preview.animate {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-#thirdspace-project-preview .left-project-preview{
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: all 0.75s ease-in-out;
-}
-
-#thirdspace-project-preview .right-project-preview {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: all 0.75s ease-in-out;
-}
-
-#thirdspace-project-preview .left-project-preview.animate {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-#thirdspace-project-preview .right-project-preview.animate {
   transform: translateY(0);
   opacity: 1;
 }
