@@ -993,7 +993,7 @@ nav {
 .left-project-preview {
   width: 100%;
   height: auto;
-  background: rgba(113, 121, 143, 0.025);
+  background: rgba(113, 121, 143, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: center;
