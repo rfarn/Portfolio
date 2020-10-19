@@ -72,6 +72,22 @@ body {
   font-weight: 700;
 }
 
+.landing-intro h2 a{
+  text-decoration: none;
+}
+
+#fca-link:hover {
+  color: #597DDA;
+}
+
+#spoint-link:hover {
+  color: #ff671d;
+}
+
+#concept-link:hover {
+  color: #16a085;
+}
+
 .landing-intro a {
   color: white;
 }
@@ -575,21 +591,23 @@ nav {
     padding: 80px 12.5% 100px 12.5%;
   }
   .landing-page-content {
-    padding-bottom: 0px;
+    padding-bottom: 170px;
   }
   .landing-about-section {
     width: 100%;
-    height: calc(100vh - 170px);
+    height: auto;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
+    margin-top: 40px;
   }
   .landing-work-section {
     width: 100%;
-    height: calc(85vh - 170px);
+    height: auto;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
+    margin-bottom: 40px;
   }
   .desktop-subtitle {
     width: 100%;
@@ -711,7 +729,7 @@ nav {
     padding: 120px 12.5% 120px 12.5%;
   }
   .landing-page-content {
-    padding-bottom: 0px;
+    padding-bottom: 170px;
   }
   .landing-about-section {
     width: 100%;
@@ -719,6 +737,7 @@ nav {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
+    margin-top: 40px;
   }
   .landing-work-section {
     width: 100%;
@@ -726,6 +745,7 @@ nav {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto;
+    margin-bottom: 40px;
   }
   .desktop-subtitle {
     width: 100%;
@@ -908,7 +928,6 @@ nav {
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
-  padding: 0px 12.5%;
 }
 
 .desktop-project-preview-container {

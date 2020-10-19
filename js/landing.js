@@ -71,10 +71,12 @@ var prevScrollpos = window.pageYOffset;
 //LANDING TEXT ANIMATION
 function fade(item) {
   const text = document.querySelector(item);
-  const strText = text.textContent;
+  const strText = text.innerText;
   const splitText = strText.split("");
 
-  text.textContent = "";
+  console.log(strText)
+
+  text.innerText = "";
   for (let i = 0; i < splitText.length; i++) {
     text.innerHTML += "<span>" + splitText[i] + "</span>";
   }
@@ -101,6 +103,7 @@ function fade(item) {
 fade(".landing-intro h1");
 fade(".landing-intro h2:first-of-type");
 fade(".landing-intro h2:last-of-type");
+
 
 // LANDING TEXT POSITION
 window.addEventListener("scroll", function() {
