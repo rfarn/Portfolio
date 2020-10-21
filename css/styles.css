@@ -49,9 +49,13 @@ body {
   flex-direction: column;
   margin-top: 5vh;
   justify-content: center;
+  animation: type 4s;
+  overflow: hidden;
 }
 
 .landing-intro h1 {
+  height: auto;
+  width: calc(100vw - 64px);
   font-size: 16px;
   line-height: 1.5em;
   color: #71798F;
@@ -59,7 +63,6 @@ body {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   margin-bottom: 1em;
-  transition: 0.2s color ease-in-out ;
 }
 
 .landing-intro h1.change-text-color {
@@ -67,6 +70,8 @@ body {
 }
 
 .landing-intro h2 {
+  height: auto;
+  width: calc(100vw - 64px);
   font-size: 28px;
   line-height: 1.5em;
   font-weight: 700;
@@ -92,13 +97,12 @@ body {
   color: white;
 }
 
-.landing-intro span {
-  opacity: 0;
-  transition: all 0.5s ease;
+.landing-intro h2:first-of-type { 
+  animation-delay: .5s;
 }
 
-.landing-intro span.fade {
-  opacity: 1;
+.landing-intro h2:last-of-type {
+  animation-delay: 1s;
 }
 
 .arrow {
@@ -107,7 +111,7 @@ body {
   font-weight: 400;
   opacity: 0;
   animation: fadeIn 0.75s ease-in-out;
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
@@ -122,14 +126,30 @@ body {
   }
 }
 
+@keyframes type {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
 @media (min-width: 576px) and (max-width: 991px) {
   .landing-top {
     padding: 0px calc(16.667% + 16px) 5vh calc(16.667% + 16px);
   }
   .landing-intro h1 {
+    width: calc(66.666vw - 32px);
     font-size: 16px;
   }
   .landing-intro h2 {
+    width: calc(66.666vw - 32px);
     font-size: 32px;
   }
 }
@@ -138,11 +158,19 @@ body {
   .landing-top {
     padding: 0px 12.5% 5vh 12.5%;
   }
+  .landing-intro {
+    animation: type 6s;  
+  }
   .landing-intro h1 {
+    width: calc(75vw);
     font-size: 18px;
   }
   .landing-intro h2 {
+    width: calc(75vw);
     font-size: 36px;
+  }
+  .arrow {
+    animation-delay: 3s;
   }
 }
 
@@ -150,14 +178,20 @@ body {
   .landing-top {
     padding: 0px 12.5% 5vh 12.5%;
   }
+  .landing-intro {
+    animation: type 6s;  
+  }
   .landing-intro h1 {
+    width: calc(75vw);
     font-size: 20px;
   }
   .landing-intro h2 {
+    width: calc(75vw);
     font-size: 42px;
   }
   .arrow {
     font-size: 16px;
+    animation-delay: 3s;
   }
 }
 

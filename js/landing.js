@@ -68,43 +68,6 @@ var prevScrollpos = window.pageYOffset;
     } 
   })
 
-//LANDING TEXT ANIMATION
-function fade(item) {
-  const text = document.querySelector(item);
-  const strText = text.innerText;
-  const splitText = strText.split("");
-
-  console.log(strText)
-
-  text.innerText = "";
-  for (let i = 0; i < splitText.length; i++) {
-    text.innerHTML += "<span>" + splitText[i] + "</span>";
-  }
-
-  let char = 0;
-  let timer = setInterval(onTick, 35);
-
-  function onTick() {
-    const span = text.querySelectorAll("span")[char];
-    span.classList.add("fade");
-    char++;
-    if (char === splitText.length) {
-      complete();
-      return;
-    }
-  }
-
-  function complete() {
-    clearInterval(timer);
-    timer = null;
-  }
-}
-
-fade(".landing-intro h1");
-fade(".landing-intro h2:first-of-type");
-fade(".landing-intro h2:last-of-type");
-
-
 // LANDING TEXT POSITION
 window.addEventListener("scroll", function() {
   if (window.scrollY >= topOfNav - window.innerHeight) {
