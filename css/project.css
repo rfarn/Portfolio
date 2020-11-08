@@ -34,6 +34,10 @@ p {
   line-height: 1.5em;
 }
 
+p.mid-text { 
+  margin-top: 40px;
+}
+
 .project-page-content {
   width: 100%;
 }
@@ -104,6 +108,13 @@ p {
   background-size: auto 100%;
 }
 
+#portal-hero-image {
+  background-image: url(../media/portal2.png);
+  background-repeat: no-repeat;
+  background-position: 60% 100%;
+  background-size: auto 100%;
+}
+
 .project-info {
   box-sizing: border-box;
   width: 50%;
@@ -160,6 +171,9 @@ p {
   p {
     font-size: 18px;
   }
+  p.mid-text { 
+    margin-top: 50px;
+  }
   .hero-image {
     padding: 100px 0px;
   }
@@ -184,7 +198,7 @@ p {
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
-  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image, #fakenews-hero-image {
+  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image, #fakenews-hero-image, #portal-hero-image {
     background-size: auto 90%;
     background-position: 50% 100%;
   }
@@ -230,6 +244,10 @@ p {
     background: rgba(255, 255, 255, 0.55);
   }
 
+  #portal-hero-image .hero-image-cover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
   .project-info {
     z-index: 1;
     width: 83.333%;
@@ -238,7 +256,10 @@ p {
 }
 
 @media (max-width: 575px) {
-  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image, #fakenews-hero-image {
+  p.mid-text { 
+    margin-top: 30px;
+  }
+  #impressions-hero-image, #fca-hero-image, #zoom-hero-image, #thirdspace-hero-image, #edge-hero-image, #bridge-hero-image, #spoint-hero-image, #fakenews-hero-image, #portal-hero-image {
     background-size: auto 50%;
     background-position: 65% 100%;
   }
@@ -281,6 +302,10 @@ p {
   }
 
   #fakenews-hero-image .hero-image-cover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  #portal-hero-image .hero-image-cover {
     background: rgba(255, 255, 255, 0.5);
   }
 
@@ -340,6 +365,10 @@ p {
 
 #fakenews-summary {
   background-color: rgba(255, 98, 126, 0.3);
+}
+
+#portal-summary {
+  background-color: rgba(183, 198, 211, 0.5);
 }
 
 .context {
@@ -666,6 +695,10 @@ p {
   justify-content: flex-start;
 }
 
+.center-section .three-images .caption {
+  justify-content: flex-start;
+}
+
 .center-section .caption {
   display: flex;
   justify-content: center;
@@ -741,6 +774,15 @@ p {
     flex-direction: column;
     padding: 0px 16px;
     justify-content: space-between;
+  }
+
+  .stay-double {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .stay-double .image-1, .stay-double .image-2 {
+    width: 47.22%;
   }
 
   .image-1,
@@ -844,11 +886,15 @@ p {
 }
 
 .edge-insight-label {
-  border-right: 3px solid #E3F4FC;
+  border-right: 3px solid #189DDC;
 }
 
 .fakenews-insight-label {
   border-right: 3px solid #FF627E;
+}
+
+.portal-insight-label {
+  border-right: 3px solid #26456D;
 }
 
 .center-insight .insight-text {
@@ -968,12 +1014,17 @@ p {
   }
 
   .edge-insight-label {
-    border-bottom: 3px solid #E3F4FC;
+    border-bottom: 3px solid #189DDC;
     border-right: none;
   }
 
   .fakenews-insight-label {
     border-bottom: 3px solid #FF627E;
+    border-right: none;
+  }
+
+  .portal-insight-label {
+    border-bottom: 3px solid #26456D;
     border-right: none;
   }
 
@@ -1450,6 +1501,12 @@ video {
   height: auto;
 }
 
+iframe {
+  width: 100%;
+  margin-top: 40px;
+  height: calc(75vw * (569/960));
+}
+
 @media (min-width: 1920px) {
   .features {
     padding: 100px 12.5%;
@@ -1492,6 +1549,10 @@ video {
   }
 
   .feature-video {
+    margin-top: 50px;
+  }
+
+  iframe {
     margin-top: 50px;
   }
 }
@@ -1560,6 +1621,10 @@ video {
   .feature-video .double-process-image {
     padding: 0px;
   }
+
+  iframe {
+    height: calc(66.666vw * (569/960));
+  }
 }
 
 @media (max-width: 575px) {
@@ -1619,6 +1684,11 @@ video {
     width: 100%;
     box-sizing: border-box;
     padding: 0px;
+  }
+
+  iframe {
+    margin-top: 30px;
+    height: calc((100vw - 64px) * (569/960));
   }
 }
 
