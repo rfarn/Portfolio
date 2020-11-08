@@ -1013,7 +1013,7 @@ nav {
   margin: 0px;
 }
 
-#zoom-project-preview {
+#portal-project-preview {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -1093,13 +1093,13 @@ nav {
   border: none;
 }
 
-#zoom-full-project {
-  border: 1px solid rgba(45, 140, 255, 0.2);
-  color: #2D8CFF;
+#portal-full-project {
+  border: 1px solid rgb(183, 198, 211);
+  color: #26456D;
 }
 
-#zoom-full-project:hover {
-  background-color: #2D8CFF;
+#portal-full-project:hover {
+  background-color: #26456D;
   color: white;
   border: none;
 }
@@ -1151,24 +1151,24 @@ nav {
   opacity: 1;
 }
 
-#zoom-project-preview .left-project-preview{
+#portal-project-preview .left-project-preview{
   transform: translateX(-100%);
   opacity: 0;
   transition: all 0.75s ease-in-out;
 }
 
-#zoom-project-preview .right-project-preview {
+#portal-project-preview .right-project-preview {
   transform: translateY(100%);
   opacity: 0;
   transition: all 0.75s ease-in-out;
 }
 
-#zoom-project-preview .left-project-preview.animate {
+#portal-project-preview .left-project-preview.animate {
   transform: translateX(0);
   opacity: 1;
 }
 
-#zoom-project-preview .right-project-preview.animate {
+#portal-project-preview .right-project-preview.animate {
   transform: translateY(0);
   opacity: 1;
 }
